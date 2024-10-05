@@ -11,11 +11,9 @@ mongoose
     useUnifiedTopology: true,
     serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
   })
-
   .then(() => {
     console.log("db connected");
   })
-
   .catch(() => {
     console.log("db i not connected");
   });
