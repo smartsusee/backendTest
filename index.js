@@ -6,7 +6,11 @@ app.use(express.json());
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/userData")
+  .connect("mongodb://127.0.0.1:27017/userData", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+  })
 
   .then(() => {
     console.log("db connected");
